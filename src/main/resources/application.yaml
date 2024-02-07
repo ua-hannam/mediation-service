@@ -23,6 +23,11 @@ spring:
       hibernate:
         ddl-auto: create
         format_sql: true
+  kafka:
+    producer:
+      bootstrap-servers: 211.205.161.133:9092
+    consumer:
+      bootstrap-servers: 211.205.161.133:9092
 
 logging:
   level:

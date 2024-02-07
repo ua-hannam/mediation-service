@@ -1,7 +1,7 @@
 plugins {
     id 'java'
     id 'org.sonarqube' version '4.4.1.3373'
-    id 'org.springframework.boot' version '3.2.0'
+    id 'org.springframework.boot' version '3.1.6'
     id 'io.spring.dependency-management' version '1.1.4'
 }
 
@@ -22,6 +22,10 @@ repositories {
     mavenCentral()
 }
 
+ext {
+    set('springCloudVersion', "2022.0.4")
+}
+
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-web'
@@ -35,6 +39,13 @@ dependencies {
     runtimeOnly 'com.h2database:h2'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.kafka:spring-kafka-test'
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
 }
 
 sonar {
