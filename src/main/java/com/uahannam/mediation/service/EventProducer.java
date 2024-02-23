@@ -10,7 +10,6 @@ public class EventProducer {
         eventPublisher.publishEvent(eventObject);
     }
 
-    // ApplicationEventPublisher를 초기화해주는 메서드를 외부에서 호출해야 합니다.
     public static void setEventPublisher(ApplicationEventPublisher applicationEventPublisher) {
         eventPublisher = applicationEventPublisher;
     }

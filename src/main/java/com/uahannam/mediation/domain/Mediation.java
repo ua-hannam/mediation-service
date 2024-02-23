@@ -18,4 +18,6 @@ public class Mediation extends BaseEntity {
     @Column(name = "id")
     private Long id;
 
+    @Column(name = "info")
+    private String info;
 }
