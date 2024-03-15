@@ -16,7 +16,6 @@ public class SaveMediationEventListener {
     @Async
     @TransactionalEventListener(MediationKafkaDto.class)
     public void handleSaveEvent(MediationKafkaDto mediationKafkaDto) {
-
         saveMediationKafkaTemplate.send("save-mediation-data", mediationKafkaDto);
     }
 }
